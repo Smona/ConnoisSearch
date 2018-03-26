@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8ACBFB212066D06000E87C08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACBFB202066D06000E87C08 /* LoginViewController.swift */; };
+		8ACBFB232066DC5600E87C08 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACBFB222066DC5600E87C08 /* TabBarController.swift */; };
+		8ACBFB252066EBE400E87C08 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACBFB242066EBE400E87C08 /* SearchViewController.swift */; };
+		8ACBFB272066EC2F00E87C08 /* ResultsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACBFB262066EC2F00E87C08 /* ResultsTableTableViewController.swift */; };
+		8ACBFB292066ECD300E87C08 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACBFB282066ECD300E87C08 /* RecipeViewController.swift */; };
 		9398825120460DAA0055174E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398825020460DAA0055174E /* AppDelegate.swift */; };
-		9398825320460DAA0055174E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398825220460DAA0055174E /* ViewController.swift */; };
 		9398825620460DAA0055174E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9398825420460DAA0055174E /* Main.storyboard */; };
 		9398825820460DAA0055174E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9398825720460DAA0055174E /* Assets.xcassets */; };
 		9398825B20460DAA0055174E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9398825920460DAA0055174E /* LaunchScreen.storyboard */; };
@@ -28,9 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8ACBFB202066D06000E87C08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8ACBFB222066DC5600E87C08 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8ACBFB242066EBE400E87C08 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8ACBFB262066EC2F00E87C08 /* ResultsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableTableViewController.swift; sourceTree = "<group>"; };
+		8ACBFB282066ECD300E87C08 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		9398824D20460DAA0055174E /* ConnoisSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnoisSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9398825020460DAA0055174E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9398825220460DAA0055174E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9398825520460DAA0055174E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9398825720460DAA0055174E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9398825A20460DAA0055174E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,11 +92,15 @@
 			isa = PBXGroup;
 			children = (
 				9398825020460DAA0055174E /* AppDelegate.swift */,
-				9398825220460DAA0055174E /* ViewController.swift */,
 				9398825420460DAA0055174E /* Main.storyboard */,
 				9398825720460DAA0055174E /* Assets.xcassets */,
+				8ACBFB202066D06000E87C08 /* LoginViewController.swift */,
+				8ACBFB282066ECD300E87C08 /* RecipeViewController.swift */,
+				8ACBFB262066EC2F00E87C08 /* ResultsTableTableViewController.swift */,
+				8ACBFB222066DC5600E87C08 /* TabBarController.swift */,
 				9398825920460DAA0055174E /* LaunchScreen.storyboard */,
 				9398825C20460DAA0055174E /* Info.plist */,
+				8ACBFB242066EBE400E87C08 /* SearchViewController.swift */,
 			);
 			path = ConnoisSearch;
 			sourceTree = "<group>";
@@ -204,7 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9398825320460DAA0055174E /* ViewController.swift in Sources */,
+				8ACBFB232066DC5600E87C08 /* TabBarController.swift in Sources */,
+				8ACBFB212066D06000E87C08 /* LoginViewController.swift in Sources */,
+				8ACBFB292066ECD300E87C08 /* RecipeViewController.swift in Sources */,
+				8ACBFB272066EC2F00E87C08 /* ResultsTableTableViewController.swift in Sources */,
+				8ACBFB252066EBE400E87C08 /* SearchViewController.swift in Sources */,
 				9398825120460DAA0055174E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ConnoisSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs378.group13.ConnoisSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -358,6 +375,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ConnoisSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs378.group13.ConnoisSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
