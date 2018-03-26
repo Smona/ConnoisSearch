@@ -75,7 +75,6 @@
 				93988277204618AF0055174E /* Images */,
 				9398824F20460DAA0055174E /* ConnoisSearch */,
 				9398824E20460DAA0055174E /* Products */,
-				939882692046142C0055174E /* favorite.png */,
 				93988274204614430055174E /* Icons */,
 			);
 			sourceTree = "<group>";
@@ -110,6 +109,7 @@
 			children = (
 				9398827A20461AE90055174E /* sprout_transparent.png */,
 				93988275204616EF0055174E /* logo_transparent.png */,
+				939882692046142C0055174E /* favorite.png */,
 				939882652046142B0055174E /* favorite@2x.png */,
 				9398826A2046142C0055174E /* favorite@3x.png */,
 				939882622046142B0055174E /* search.png */,
