@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -174,9 +173,9 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTR-yH-WkU">
                                         <rect key="frame" x="8" y="259" width="359" height="624"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <mutableString key="text">Place the noodles in a bowl and cover with cold water. Let sit for 1 hour. Meanwhile, in a small bowl, whisk together the tamarind paste, fish sauce, sugar, lime juice and 1/4 cup water; set aside. Lightly steam the broccoli and carrot; set aside.
+                                        <string key="text">Place the noodles in a bowl and cover with cold water. Let sit for 1 hour. Meanwhile, in a small bowl, whisk together the tamarind paste, fish sauce, sugar, lime juice and 1/4 cup water; set aside. Lightly steam the broccoli and carrot; set aside.
 Drain the noodles. Set a wok over high heat for 1 minute, then add the oil and heat until almost smoking. Add the garlic and ginger; sauté for 30 seconds. Add the shrimp and sauté until almost cooked through, 2 to 3 minutes. Transfer the shrimp to a plate, leaving the oil in the pan.
-Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarind sauce and toss to coat the noodles. Add more sauce if needed. Cook until the noodles are al dente, then push them to one side of the wok and scramble the eggs in the remaining space. Add the shrimp, broccoli, carrot, scallions, bean sprouts and half the peanuts. Toss to mix. Divide among 4 plates and garnish with the remaining peanuts, the cilantro, lime wedges, sesame seeds and (for brave children) red pepper flakes.</mutableString>
+Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarind sauce and toss to coat the noodles. Add more sauce if needed. Cook until the noodles are al dente, then push them to one side of the wok and scramble the eggs in the remaining space. Add the shrimp, broccoli, carrot, scallions, bean sprouts and half the peanuts. Toss to mix. Divide among 4 plates and garnish with the remaining peanuts, the cilantro, lime wedges, sesame seeds and (for brave children) red pepper flakes.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -303,7 +302,7 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
         <!--Login-->
         <scene sceneID="gsj-hh-tuL">
             <objects>
-                <viewController title="Login" id="lqz-V3-gox" sceneMemberID="viewController">
+                <viewController title="Login" id="lqz-V3-gox" customClass="LoginViewController" customModule="ConnoisSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pvb-cL-bzp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,7 +316,7 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="p4a-sb-A66" kind="show" id="83U-0B-i1x"/>
+                                    <segue destination="p4a-sb-A66" kind="show" identifier="loginID" id="83U-0B-i1x"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UJQ-pe-AQI">
