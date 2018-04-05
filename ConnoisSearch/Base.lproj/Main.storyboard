@@ -10,6 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Signup-->
+        <scene sceneID="Kzp-c7-Vch">
+            <objects>
+                <viewController title="Signup" id="tDL-fM-7Rw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Rw-rK-sJq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mbc-wV-sEd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLh-er-AVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1399" y="785"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="dLu-qv-Spq">
             <objects>
@@ -315,7 +330,7 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                                 <rect key="contentStretch" x="0.02" y="0.0" width="1" height="1"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt7-cD-7P8">
-                                <rect key="frame" x="16" y="416" width="343" height="30"/>
+                                <rect key="frame" x="16" y="395" width="343" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
@@ -349,6 +364,14 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIv-Nr-Pa5">
+                                <rect key="frame" x="16" y="454" width="343" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Signup"/>
+                                <connections>
+                                    <segue destination="tDL-fM-7Rw" kind="show" id="edH-HN-WzN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -369,7 +392,7 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxt-Dk-5Et" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1399" y="18"/>
+            <point key="canvasLocation" x="-1399.2" y="17.541229385307346"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ylD-oM-fzH">
