@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,22 @@ class LoginViewController: UIViewController {
         if let password = UserDefaults.standard.string(forKey: "Password") {
             print(password)
         }
+        
+        emailField.delegate = self
+        passwordField.delegate = self
     }
 
+    //dismisses keyboard when Returned pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    //dismisses keyboard when outside of keyboard/field pressed
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -215,7 +215,7 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
         <!--Search-->
         <scene sceneID="MKg-ze-qtn">
             <objects>
-                <viewController title="Search" id="8u7-WT-gKK" sceneMemberID="viewController">
+                <viewController title="Search" id="8u7-WT-gKK" customClass="SearchViewController" customModule="ConnoisSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tEv-9l-NpO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,6 +245,9 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                         <viewLayoutGuide key="safeArea" id="AFN-fv-74l"/>
                     </view>
                     <navigationItem key="navigationItem" id="P8D-GG-hng"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="nhI-yd-eWM" id="lQz-mX-IU5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecn-lq-19B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -351,7 +354,7 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                         <constraints>
                             <constraint firstItem="dDd-lX-mUx" firstAttribute="top" secondItem="pvb-cL-bzp" secondAttribute="top" id="5t3-XO-LOg"/>
                             <constraint firstItem="dDd-lX-mUx" firstAttribute="bottom" secondItem="SRW-Ew-MXF" secondAttribute="bottom" id="Pjj-bm-MZy"/>
-                            <constraint firstItem="sfS-eY-RV9" firstAttribute="top" secondItem="SRW-Ew-MXF" secondAttribute="top" constant="103" id="Qdz-Fh-4tg"/>
+                            <constraint firstItem="sfS-eY-RV9" firstAttribute="top" secondItem="SRW-Ew-MXF" secondAttribute="top" constant="87" id="Qdz-Fh-4tg"/>
                             <constraint firstItem="SRW-Ew-MXF" firstAttribute="trailing" secondItem="sfS-eY-RV9" secondAttribute="trailing" constant="16" id="RVb-tT-7bk"/>
                             <constraint firstItem="dDd-lX-mUx" firstAttribute="leading" secondItem="SRW-Ew-MXF" secondAttribute="leading" id="Rc3-uc-ngl"/>
                             <constraint firstItem="sfS-eY-RV9" firstAttribute="leading" secondItem="SRW-Ew-MXF" secondAttribute="leading" constant="16" id="e1x-RG-aYa"/>
@@ -359,6 +362,10 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SRW-Ew-MXF"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="UJQ-pe-AQI" id="tP9-lM-QRx"/>
+                        <outlet property="passwordField" destination="67a-jL-ekI" id="hQq-2H-5H5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxt-Dk-5Et" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
