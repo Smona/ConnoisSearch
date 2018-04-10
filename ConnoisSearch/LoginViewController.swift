@@ -7,22 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        UserDefaults.standard.set("bharuchahet", forKey: "Email")
-        UserDefaults.standard.set("cricket7", forKey: "Password")
-        UserDefaults.standard.synchronize()
-        
-        if let email = UserDefaults.standard.string(forKey: "Email") {
-            print(email)
-        }
-        if let password = UserDefaults.standard.string(forKey: "Password") {
-            print(password)
-        }
         
         emailField.delegate = self
         passwordField.delegate = self
@@ -31,6 +21,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //dismisses keyboard when Returned pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String
+        ) -> Bool {
+        
+        if emailField.text!.count > 0 && passwordField.text!.count > 0 {
+            loginButton.isEnabled = true
+        } else {
+            loginButton.isEnabled = false
+        }
+        
         return true
     }
     
@@ -45,18 +49,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBOutlet weak var emailField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
-    
-    @IBAction func loginButton(_ sender: Any) {
-    }
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "loginID" {
-            if emailField.text != UserDefaults.standard.string(forKey: "Email") || passwordField.text != UserDefaults.standard.string(forKey: "Password") {
+    @IBOutlet weak var loginButton: UIButton!
+
+    @IBAction func loginButtonClicked(_ sender: Any) {
+        Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!) { (user, error) in
+            if let error = error as NSError? {
                 let alertController = UIAlertController (
                     title: "Login Failed",
-                    message: "The username and password you have entered is incorrect.",
+                    message: "An error occurred",
                     preferredStyle: UIAlertControllerStyle.alert)
                 let OKAction = UIAlertAction(
                     title: "OK",
@@ -65,13 +66,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         print("OK button pressed");
                 }
                 alertController.addAction(OKAction)
-                present(alertController, animated: true, completion: nil)
-                print("false")
-                return false
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                self.performSegue(withIdentifier: "login", sender: sender)
             }
         }
-        print("true")
-        return true
+        
+    }
+    
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
+        
     }
 
  /*
