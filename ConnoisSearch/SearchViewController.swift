@@ -9,6 +9,9 @@
 import UIKit
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
+    var randomDict = [String: Any]()
+    //PROBLEM: when called in RecipeVC, an empty randomDict is passed, without the info appended from apiConnection()
+    //SOLUTION: pass from apiConnection()? Code order problem? randomDict being deleted for some reason when RecipeVC calls it?
     
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -16,6 +19,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         searchTextField.delegate = self
+        apiConnection()
     }
     
     //dismisses keyboard when Returned pressed
@@ -35,14 +39,16 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func randomButton(_ sender: Any) {
-        apiConnection()
+        //apiConnection()
+        //Note: because apiConnection() loads AFTER the segue to the RecipeViewController when it's put here, I moved the apiConnection() earlier so it's preloaded as soon as the SearchViewController is loaded.
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchID" {
-            print("YAY")
+            print("YAY1")
         }
         else if segue.identifier == "recipeID" {
-            print("YAY")
+            print("YAY2")
         }
     }
     
@@ -64,16 +70,54 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                     return
                 }
                 do {
-                    guard let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject] else {
+                    guard let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any/*Object*/] else {
                         print("error trying to convert data to JSON")
                         return
                     }
-                    print(json.description)
-                    guard let jsonTitle = json["title"] as? String else {
-                        print("could not get JSON title")
-                        return
+                    //print(json.description)
+                    let header = json["recipes"] as? [[String: Any]]
+                    for item in header!{
+                        if let title = item["title"] as? String{
+                            self.randomDict["recipe title"] = title
+                        }
+                        if let image = item["image"] as? String{
+                            self.randomDict["image url"] = image
+                        }
+                        if let glutenFree = item["glutenFree"] as? Int{
+                            self.randomDict["gluten free"] = glutenFree
+                        }
+                        if let dairyFree = item["dairyFree"] as? Int{
+                            self.randomDict["dairy free"] = dairyFree
+                        }
+                        if let vegan = item["vegan"] as? Int{
+                            self.randomDict["vegan"] = vegan
+                        }
+                        if let vegetarian = item["vegetarian"] as? Int{
+                            self.randomDict["vegetarian"] = vegetarian
+                        }
+                        if let cookTime = item["readyInMinutes"] as? Int{
+                            self.randomDict["cook time"] = cookTime
+                        }
+                        if let instructions = item["instructions"] as? String{
+                            self.randomDict["instructions"] = instructions
+                        }
+                        if let ingredients = item["extendedIngredients"] as? [[String: Any]]{
+                            var ingredientArray = [String]()
+                            for i in ingredients{
+                                ingredientArray.append(i["name"] as! String)
+                            }
+                            self.randomDict["ingredients"] = ingredientArray
+                        }
+                        //TO CHECK AND SEE IF INFORMATION GRABBED CORRECTLY:
+                        if let recipeURL = item["spoonacularSourceUrl"] as? String{
+                            self.randomDict["source url"] = recipeURL
+                        }
+                        
+                        if let servings = item["servings"] as? Int{
+                            self.randomDict["servings"] = servings
+                        }
                     }
-                    print("The title is: " + jsonTitle)
+                    print(self.randomDict) //DICTIONARY WITH IMPORTANT JSON INFO
                 } catch {
                     print("error trying to convert data to JSON")
                     return
