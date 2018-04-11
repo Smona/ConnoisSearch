@@ -236,7 +236,7 @@
         <!--Recipe-->
         <scene sceneID="TZM-5Q-r31">
             <objects>
-                <viewController title="Recipe" id="Mcj-kf-mYI" sceneMemberID="viewController">
+                <viewController title="Recipe" id="Mcj-kf-mYI" customClass="RecipeViewController" customModule="ConnoisSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NKy-cw-naC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,7 +257,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTR-yH-WkU">
-                                        <rect key="frame" x="8" y="259" width="359" height="624"/>
+                                        <rect key="frame" x="8" y="288" width="359" height="351"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <string key="text">Place the noodles in a bowl and cover with cold water. Let sit for 1 hour. Meanwhile, in a small bowl, whisk together the tamarind paste, fish sauce, sugar, lime juice and 1/4 cup water; set aside. Lightly steam the broccoli and carrot; set aside.
 Drain the noodles. Set a wok over high heat for 1 minute, then add the oil and heat until almost smoking. Add the garlic and ginger; sauté for 30 seconds. Add the shrimp and sauté until almost cooked through, 2 to 3 minutes. Transfer the shrimp to a plate, leaving the oil in the pan.
@@ -274,7 +274,7 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4 servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhg-GA-oTb">
-                                        <rect key="frame" x="287" y="258" width="80" height="21"/>
+                                        <rect key="frame" x="272" y="258" width="95" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -293,6 +293,13 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="JLn-G5-Qsi"/>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="zun-Tf-5YI" id="Vcj-VR-th3"/>
+                        <outlet property="instructionsLabel" destination="fTR-yH-WkU" id="EfM-4E-Vwr"/>
+                        <outlet property="servingsLabel" destination="bhg-GA-oTb" id="1aJ-L3-bjp"/>
+                        <outlet property="timeLabel" destination="iOa-Xk-b3v" id="h6b-Po-aSt"/>
+                        <outlet property="titleLabel" destination="y8O-Xw-KcS" id="YxY-Tn-obs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98T-3J-rvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -317,6 +324,10 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                                 <rect key="frame" x="16" y="152" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Random Recipe"/>
+                                <connections>
+                                    <action selector="randomButton:" destination="8u7-WT-gKK" eventType="touchUpInside" id="b6B-FL-o7e"/>
+                                    <segue destination="Mcj-kf-mYI" kind="show" identifier="recipeID" id="uTs-c8-uUV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amJ-oC-48A">
                                 <rect key="frame" x="163" y="114" width="48" height="30"/>

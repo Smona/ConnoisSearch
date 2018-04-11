@@ -9,11 +9,27 @@
 import UIKit
 
 class RecipeViewController: UIViewController {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var servingsLabel: UILabel!
+    @IBOutlet weak var instructionsLabel: UILabel!
+    
+    var recipeInfo = [String: Any]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        recipeInfo = SearchViewController().randomDict //copies dictionary from SearchVC
+        print(recipeInfo)
 
-        // Do any additional setup after loading the view.
+        titleLabel.text = "meme" //TEMP; REPLACE WITH DICTIONARY'S "recipe title"
+        timeLabel.text = String(5) + " min." //TEMP; REPLACE WITH DICTIONARY'S "cook time"
+        servingsLabel.text = String(2) + " serving(s)" //TEMP; REPLACE WITH DICTIONARY'S "servings"
+        instructionsLabel.text = "say cheese" //TEMP; REPLACE WITH DICTIONARY'S "instructions"
+        
+        let url = URL(string: "https://spoonacular.com/recipeImages/598880-556x370.jpg") //TEMP; REPLACE WITH DICTIONARY'S "image url"
+        let data = try? Data(contentsOf: url!)
+        image.image = UIImage(data: data!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +37,6 @@ class RecipeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
