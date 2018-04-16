@@ -238,51 +238,51 @@
             <objects>
                 <viewController title="Recipe" id="Mcj-kf-mYI" customClass="RecipeViewController" customModule="ConnoisSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NKy-cw-naC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6l8-HB-Fs0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l8-HB-Fs0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="917"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mockup_recipe_img.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="zun-Tf-5YI">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="196"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pad Thai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8O-Xw-KcS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pad Thai" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8O-Xw-KcS">
                                         <rect key="frame" x="8" y="204" width="359" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTR-yH-WkU">
-                                        <rect key="frame" x="8" y="288" width="359" height="351"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Place the noodles in a bowl and cover with cold water. Let sit for 1 hour. Meanwhile, in a small bowl, whisk together the tamarind paste, fish sauce, sugar, lime juice and 1/4 cup water; set aside. Lightly steam the broccoli and carrot; set aside.
-Drain the noodles. Set a wok over high heat for 1 minute, then add the oil and heat until almost smoking. Add the garlic and ginger; sauté for 30 seconds. Add the shrimp and sauté until almost cooked through, 2 to 3 minutes. Transfer the shrimp to a plate, leaving the oil in the pan.
-Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarind sauce and toss to coat the noodles. Add more sauce if needed. Cook until the noodles are al dente, then push them to one side of the wok and scramble the eggs in the remaining space. Add the shrimp, broccoli, carrot, scallions, bean sprouts and half the peanuts. Toss to mix. Divide among 4 plates and garnish with the remaining peanuts, the cilantro, lime wedges, sesame seeds and (for brave children) red pepper flakes.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="340Cal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLs-BD-CmK">
-                                        <rect key="frame" x="8" y="259" width="56" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4 servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhg-GA-oTb">
-                                        <rect key="frame" x="272" y="258" width="95" height="21"/>
+                                        <rect key="frame" x="8" y="271" width="56" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1h 15m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOa-Xk-b3v">
-                                        <rect key="frame" x="160" y="258" width="54" height="21"/>
+                                        <rect key="frame" x="160" y="271" width="54" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4 servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhg-GA-oTb">
+                                        <rect key="frame" x="272" y="270" width="95" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTR-yH-WkU">
+                                        <rect key="frame" x="8" y="322" width="359" height="523"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Place the noodles in a bowl and cover with cold water. Let sit for 1 hour. Meanwhile, in a small bowl, whisk together the tamarind paste, fish sauce, sugar, lime juice and 1/4 cup water; set aside. Lightly steam the broccoli and carrot; set aside.
+Drain the noodles. Set a wok over high heat for 1 minute, then add the oil and heat until almost smoking. Add the garlic and ginger; sauté for 30 seconds. Add the shrimp and sauté until almost cooked through, 2 to 3 minutes. Transfer the shrimp to a plate, leaving the oil in the pan.
+Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarind sauce and toss to coat the noodles. Add more sauce if needed. Cook until the noodles are al dente, then push them to one side of the wok and scramble the eggs in the remaining space. Add the shrimp, broccoli, carrot, scallions, bean sprouts and half the peanuts. Toss to mix. Divide among 4 plates and garnish with the remaining peanuts, the cilantro, lime wedges, sesame seeds and (for brave children) red pepper flakes.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -293,9 +293,12 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="JLn-G5-Qsi"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="1500"/>
                     <connections>
                         <outlet property="image" destination="zun-Tf-5YI" id="Vcj-VR-th3"/>
                         <outlet property="instructionsLabel" destination="fTR-yH-WkU" id="EfM-4E-Vwr"/>
+                        <outlet property="recipeScroll" destination="6l8-HB-Fs0" id="dPZ-bU-sYd"/>
                         <outlet property="servingsLabel" destination="bhg-GA-oTb" id="1aJ-L3-bjp"/>
                         <outlet property="timeLabel" destination="iOa-Xk-b3v" id="h6b-Po-aSt"/>
                         <outlet property="titleLabel" destination="y8O-Xw-KcS" id="YxY-Tn-obs"/>
@@ -303,7 +306,7 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98T-3J-rvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2045.5999999999999" y="459.22038980509751"/>
+            <point key="canvasLocation" x="2046" y="752"/>
         </scene>
         <!--Search-->
         <scene sceneID="MKg-ze-qtn">

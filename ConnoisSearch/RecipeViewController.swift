@@ -14,20 +14,24 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var servingsLabel: UILabel!
     @IBOutlet weak var instructionsLabel: UILabel!
+    @IBOutlet weak var recipeScroll: UIScrollView!
     
     var recipeInfo = [String: Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeInfo = SearchViewController().randomDict //copies dictionary from SearchVC
+        recipeScroll.contentSize = CGSize(width: self.view.frame.width, height: 1500)
         print(recipeInfo)
 
-        titleLabel.text = "meme" //TEMP; REPLACE WITH DICTIONARY'S "recipe title"
-        timeLabel.text = String(5) + " min." //TEMP; REPLACE WITH DICTIONARY'S "cook time"
-        servingsLabel.text = String(2) + " serving(s)" //TEMP; REPLACE WITH DICTIONARY'S "servings"
-        instructionsLabel.text = "say cheese" //TEMP; REPLACE WITH DICTIONARY'S "instructions"
-        
-        let url = URL(string: "https://spoonacular.com/recipeImages/598880-556x370.jpg") //TEMP; REPLACE WITH DICTIONARY'S "image url"
+        titleLabel.text =  recipeInfo["recipe_title"] as? String
+        titleLabel.sizeToFit()
+        timeLabel.text = String((recipeInfo["cook_time"] as? Int)!) + " min"
+        timeLabel.sizeToFit()
+        servingsLabel.text = String((recipeInfo["servings"] as? Int)!) + " serving(s)"
+        servingsLabel.sizeToFit()
+        instructionsLabel.text = recipeInfo["instructions"] as? String
+        instructionsLabel.sizeToFit()
+        let url = URL(string: (recipeInfo["image_url"] as? String)!) 
         let data = try? Data(contentsOf: url!)
         image.image = UIImage(data: data!)
     }

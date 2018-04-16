@@ -17,9 +17,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        searchTextField.delegate = self
         apiConnection()
+        searchTextField.delegate = self
     }
     
     //dismisses keyboard when Returned pressed
@@ -39,8 +38,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func randomButton(_ sender: Any) {
-        //apiConnection()
-        //Note: because apiConnection() loads AFTER the segue to the RecipeViewController when it's put here, I moved the apiConnection() earlier so it's preloaded as soon as the SearchViewController is loaded.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,6 +45,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             print("YAY1")
         }
         else if segue.identifier == "recipeID" {
+            if let destinationVC = segue.destination as? RecipeViewController {
+                destinationVC.recipeInfo = self.randomDict
+            }
             print("YAY2")
         }
     }
@@ -78,16 +78,16 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                     let header = json["recipes"] as? [[String: Any]]
                     for item in header!{
                         if let title = item["title"] as? String{
-                            self.randomDict["recipe title"] = title
+                            self.randomDict["recipe_title"] = title
                         }
                         if let image = item["image"] as? String{
-                            self.randomDict["image url"] = image
+                            self.randomDict["image_url"] = image
                         }
                         if let glutenFree = item["glutenFree"] as? Int{
-                            self.randomDict["gluten free"] = glutenFree
+                            self.randomDict["gluten_free"] = glutenFree
                         }
                         if let dairyFree = item["dairyFree"] as? Int{
-                            self.randomDict["dairy free"] = dairyFree
+                            self.randomDict["dairy_free"] = dairyFree
                         }
                         if let vegan = item["vegan"] as? Int{
                             self.randomDict["vegan"] = vegan
@@ -96,7 +96,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                             self.randomDict["vegetarian"] = vegetarian
                         }
                         if let cookTime = item["readyInMinutes"] as? Int{
-                            self.randomDict["cook time"] = cookTime
+                            self.randomDict["cook_time"] = cookTime
                         }
                         if let instructions = item["instructions"] as? String{
                             self.randomDict["instructions"] = instructions
@@ -125,6 +125,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                 }
             task.resume()
         }
+
     }
 }
 
