@@ -13,28 +13,24 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signupBtn: UIButton!
+    @IBOutlet weak var confirmField: UITextField!
     
     @IBAction func signupBtnClick(_ sender: Any) {
-      Auth.auth().createUser(withEmail: self.emailField.text!, password: self.passwordField.text!)
-      { (user, error) in
+        if passwordField.text! != confirmField.text! {
+            self.presentError("Passwords do not match")
+            self.passwordField.text = ""
+            self.confirmField.text = ""
+            return
+        }
+        Auth.auth().createUser(withEmail: self.emailField.text!, password: self.passwordField.text!)
+        { (user, error) in
         if let error = error as NSError? {
           // Handle error
-          let alertController = UIAlertController (
-              title: "Signup Failed",
-              message: "Make sure you entered a valid email",
-              preferredStyle: UIAlertControllerStyle.alert)
-          let OKAction = UIAlertAction(
-              title: "OK",
-              style: UIAlertActionStyle.default) {
-                  (action:UIAlertAction) in
-                  print("OK button pressed");
-          }
-          alertController.addAction(OKAction)
-          self.present(alertController, animated: true, completion: nil)
+            self.presentError("Make sure you entered a valid email")
         } else {
-          self.performSegue(withIdentifier: "signedUpSuccess", sender: sender)
+            self.performSegue(withIdentifier: "signedUpSuccess", sender: sender)
         }
-      }
+        }
     }
     
     override func viewDidLoad() {
@@ -48,6 +44,21 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func presentError(_ msg: String) {
+        let alertController = UIAlertController (
+            title: "Signup Failed",
+            message: msg,
+            preferredStyle: UIAlertControllerStyle.alert)
+        let OKAction = UIAlertAction(
+            title: "OK",
+            style: UIAlertActionStyle.default) {
+                (action:UIAlertAction) in
+                print("OK button pressed");
+        }
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func textField(_ textField: UITextField,
