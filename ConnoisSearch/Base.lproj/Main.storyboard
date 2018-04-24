@@ -557,7 +557,7 @@
                                         <rect key="frame" x="0.0" y="125" width="293" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="44"/>
-                                        <color key="textColor" red="0.078431372549019607" green="0.81960784313725488" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.31016021573604058" green="0.31016021573604058" blue="0.31016021573604058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -645,6 +645,6 @@
         <image name="sprout_transparent.png" width="112" height="117"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JZU-fY-umJ"/>
+        <segue reference="FwS-UL-uSr"/>
     </inferredMetricsTieBreakers>
 </document>
