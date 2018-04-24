@@ -22,7 +22,7 @@ class RecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         recipeScroll.contentSize = CGSize(width: self.view.frame.width, height: 1500)
-        //print(recipeInfo)
+        print(recipeInfo)
 
         titleLabel.text =  recipeInfo["recipe_title"] as? String
         titleLabel.sizeToFit()

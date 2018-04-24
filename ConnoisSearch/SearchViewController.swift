@@ -18,6 +18,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTextField.delegate = self
+        apiConnection()
     }
     
     //dismisses keyboard when Returned pressed
@@ -35,21 +36,15 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func randomButton(_ sender: Any) {
-        apiConnection()
-        performSegue(withIdentifier: "showRandom", sender: sender)
-    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchID" {
             print("YAY1")
         }
-        else if segue.identifier == "recipeID" {
+        else if segue.identifier == "showRandom" {
             if let destinationVC = segue.destination as? RecipeViewController {
                 destinationVC.recipeInfo = self.randomDict
             }
-            print("YAY2")
         }
     }
     

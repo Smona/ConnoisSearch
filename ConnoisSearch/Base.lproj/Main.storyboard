@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBm-WX-Fbq">
-                                <rect key="frame" x="36" y="252.5" width="303" height="30"/>
+                                <rect key="frame" x="36" y="241.5" width="303" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="b09-tV-xwc"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="297" id="khf-Vu-16S"/>
@@ -30,7 +30,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join ConnoisSearch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Int-cw-9y6">
-                                <rect key="frame" x="37.5" y="94" width="300" height="44"/>
+                                <rect key="frame" x="37.5" y="94" width="300" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="6dz-1V-ubs"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="JMH-FF-fcR"/>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBI-TJ-LUp">
-                                <rect key="frame" x="36" y="328.5" width="303" height="32"/>
+                                <rect key="frame" x="36" y="317.5" width="303" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="ndX-Gl-Jfw"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbr-1C-IRa">
-                                <rect key="frame" x="37.5" y="389" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="378" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="BXg-MI-19j"/>
                                     <constraint firstAttribute="height" constant="30" id="ztV-Wi-Gtp"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R96-yK-eRO">
-                                <rect key="frame" x="36" y="290.5" width="303" height="30"/>
+                                <rect key="frame" x="36" y="279.5" width="303" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="V2g-OG-0qd"/>
                                     <constraint firstAttribute="width" constant="303" id="oRD-yB-2QU"/>
@@ -76,7 +76,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dt4-5b-Iar">
-                                <rect key="frame" x="37.5" y="214" width="300" height="30"/>
+                                <rect key="frame" x="37.5" y="203" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Kn2-Wh-7oM"/>
                                     <constraint firstAttribute="width" constant="300" id="ZWd-ur-PMY"/>
@@ -367,7 +367,7 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Random Recipe"/>
                                 <connections>
-                                    <action selector="randomButton:" destination="8u7-WT-gKK" eventType="touchUpInside" id="b6B-FL-o7e"/>
+                                    <segue destination="Mcj-kf-mYI" kind="show" identifier="showRandom" id="nan-hx-Lyb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amJ-oC-48A">
@@ -385,7 +385,6 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                     <navigationItem key="navigationItem" id="P8D-GG-hng"/>
                     <connections>
                         <outlet property="searchTextField" destination="nhI-yd-eWM" id="lQz-mX-IU5"/>
-                        <segue destination="Mcj-kf-mYI" kind="show" identifier="showRandom" id="ZSk-vx-Cbj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecn-lq-19B" userLabel="First Responder" sceneMemberID="firstResponder"/>
