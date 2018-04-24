@@ -14,11 +14,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     //SOLUTION: pass from apiConnection()? Code order problem? randomDict being deleted for some reason when RecipeVC calls it?
     
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var randomButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTextField.delegate = self
-        apiConnection()
     }
     
     //dismisses keyboard when Returned pressed
@@ -37,6 +37,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func randomClicked(_ sender: Any) {
+        apiConnection()
+        randomButton.setTitle("Loading...", for: UIControlState.normal)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchID" {
             print("YAY1")
@@ -114,6 +118,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                         }
                     }
                     print(self.randomDict) //DICTIONARY WITH IMPORTANT JSON INFO
+                    DispatchQueue.main.async {
+                        self.randomButton.setTitle("Random Recipe", for: UIControlState.normal)
+                        self.performSegue(withIdentifier: "showRandom", sender: self)
+                    }
                 } catch {
                     print("error trying to convert data to JSON")
                     return

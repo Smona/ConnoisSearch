@@ -16,13 +16,12 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var recipeScroll: UIScrollView!
     @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var recipeContainer: UIView!
     
     var recipeInfo = [String: Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeScroll.contentSize = CGSize(width: self.view.frame.width, height: 1500)
-        print(recipeInfo)
 
         titleLabel.text =  recipeInfo["recipe_title"] as? String
         titleLabel.sizeToFit()
@@ -30,15 +29,18 @@ class RecipeViewController: UIViewController {
         timeLabel.sizeToFit()
         servingsLabel.text = String((recipeInfo["servings"] as? Int)!) + " serving(s)"
         servingsLabel.sizeToFit()
-        instructionsLabel.text = "Instructions:\n" + (recipeInfo["instructions"] as? String)!
+        instructionsLabel.text = (recipeInfo["instructions"] as? String)!
         instructionsLabel.sizeToFit()
         
-        var ingredients = recipeInfo["ingredients"] as! [String]
-        ingredientsLabel.text = "Ingredients:\n" + ingredients.joined(separator: "\n")
+        let ingredients = recipeInfo["ingredients"] as! [String]
+        ingredientsLabel.text = ingredients.joined(separator: "\n")
+        ingredientsLabel.sizeToFit()
         
-        let url = URL(string: (recipeInfo["image_url"] as? String)!) 
+        let url = URL(string: (recipeInfo["image_url"] as? String)!)
         let data = try? Data(contentsOf: url!)
         image.image = UIImage(data: data!)
+
+        recipeContainer.sizeToFit()
     }
 
     override func didReceiveMemoryWarning() {
