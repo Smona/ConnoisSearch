@@ -15,13 +15,14 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var servingsLabel: UILabel!
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var recipeScroll: UIScrollView!
+    @IBOutlet weak var ingredientsLabel: UILabel!
     
     var recipeInfo = [String: Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         recipeScroll.contentSize = CGSize(width: self.view.frame.width, height: 1500)
-        print(recipeInfo)
+        //print(recipeInfo)
 
         titleLabel.text =  recipeInfo["recipe_title"] as? String
         titleLabel.sizeToFit()
@@ -29,8 +30,12 @@ class RecipeViewController: UIViewController {
         timeLabel.sizeToFit()
         servingsLabel.text = String((recipeInfo["servings"] as? Int)!) + " serving(s)"
         servingsLabel.sizeToFit()
-        instructionsLabel.text = recipeInfo["instructions"] as? String
+        instructionsLabel.text = "Instructions:\n" + (recipeInfo["instructions"] as? String)!
         instructionsLabel.sizeToFit()
+        
+        var ingredients = recipeInfo["ingredients"] as! [String]
+        ingredientsLabel.text = "Ingredients:\n" + ingredients.joined(separator: "\n")
+        
         let url = URL(string: (recipeInfo["image_url"] as? String)!) 
         let data = try? Data(contentsOf: url!)
         image.image = UIImage(data: data!)

@@ -104,7 +104,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                         if let ingredients = item["extendedIngredients"] as? [[String: Any]]{
                             var ingredientArray = [String]()
                             for i in ingredients{
-                                ingredientArray.append(i["name"] as! String)
+                                ingredientArray.append(i["originalString"] as! String)
                             }
                             self.randomDict["ingredients"] = ingredientArray
                         }
