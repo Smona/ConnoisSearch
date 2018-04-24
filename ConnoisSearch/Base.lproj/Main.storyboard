@@ -345,7 +345,7 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98T-3J-rvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2045.5999999999999" y="751.12443778110946"/>
+            <point key="canvasLocation" x="1934" y="-1636"/>
         </scene>
         <!--Search-->
         <scene sceneID="MKg-ze-qtn">
@@ -368,7 +368,6 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                                 <state key="normal" title="Random Recipe"/>
                                 <connections>
                                     <action selector="randomButton:" destination="8u7-WT-gKK" eventType="touchUpInside" id="b6B-FL-o7e"/>
-                                    <segue destination="Mcj-kf-mYI" kind="show" identifier="recipeID" id="uTs-c8-uUV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amJ-oC-48A">
@@ -386,6 +385,7 @@ Add the noodles and stir-fry for 1 minute. Pour in three-quarters of the tamarin
                     <navigationItem key="navigationItem" id="P8D-GG-hng"/>
                     <connections>
                         <outlet property="searchTextField" destination="nhI-yd-eWM" id="lQz-mX-IU5"/>
+                        <segue destination="Mcj-kf-mYI" kind="show" identifier="showRandom" id="ZSk-vx-Cbj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecn-lq-19B" userLabel="First Responder" sceneMemberID="firstResponder"/>

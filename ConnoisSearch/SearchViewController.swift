@@ -17,7 +17,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        apiConnection()
         searchTextField.delegate = self
     }
     
@@ -38,6 +37,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func randomButton(_ sender: Any) {
+        apiConnection()
+        performSegue(withIdentifier: "showRandom", sender: sender)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
