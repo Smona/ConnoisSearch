@@ -16,6 +16,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         emailField.delegate = self
         passwordField.delegate = self
+        
+        // Keep user logged in between sessions
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+                self.performSegue(withIdentifier: "login", sender: self)
+            } else {
+                // No user is signed in.
+            }
+        }
     }
 
     //dismisses keyboard when Returned pressed
