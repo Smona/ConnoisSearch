@@ -42,6 +42,8 @@
 		9398827B20461AE90055174E /* sprout_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 9398827A20461AE90055174E /* sprout_transparent.png */; };
 		9398827D204620510055174E /* mockup_recipe_img.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9398827C204620480055174E /* mockup_recipe_img.jpeg */; };
 		93AE0614207C5141004B20AF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AE0613207C5141004B20AF /* SignupViewController.swift */; };
+		93C71E772094E496003AFB1B /* RecipeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C71E762094E496003AFB1B /* RecipeItem.swift */; };
+		93C71E792094F0E5003AFB1B /* recipeItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C71E782094F0E5003AFB1B /* recipeItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		9398827A20461AE90055174E /* sprout_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprout_transparent.png; sourceTree = "<group>"; };
 		9398827C204620480055174E /* mockup_recipe_img.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mockup_recipe_img.jpeg; sourceTree = "<group>"; };
 		93AE0613207C5141004B20AF /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		93C71E762094E496003AFB1B /* RecipeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItem.swift; sourceTree = "<group>"; };
+		93C71E782094F0E5003AFB1B /* recipeItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 		9398824F20460DAA0055174E /* ConnoisSearch */ = {
 			isa = PBXGroup;
 			children = (
+				93C71E762094E496003AFB1B /* RecipeItem.swift */,
+				93C71E782094F0E5003AFB1B /* recipeItemTableViewCell.swift */,
 				9398825020460DAA0055174E /* AppDelegate.swift */,
 				9398825420460DAA0055174E /* Main.storyboard */,
 				93AE0613207C5141004B20AF /* SignupViewController.swift */,
@@ -281,10 +287,12 @@
 			files = (
 				8ACBFB232066DC5600E87C08 /* TabBarController.swift in Sources */,
 				93AE0614207C5141004B20AF /* SignupViewController.swift in Sources */,
+				93C71E772094E496003AFB1B /* RecipeItem.swift in Sources */,
 				8ACBFB212066D06000E87C08 /* LoginViewController.swift in Sources */,
 				8ACBFB292066ECD300E87C08 /* RecipeViewController.swift in Sources */,
 				8ACBFB272066EC2F00E87C08 /* ResultsTableTableViewController.swift in Sources */,
 				8ACBFB252066EBE400E87C08 /* SearchViewController.swift in Sources */,
+				93C71E792094F0E5003AFB1B /* recipeItemTableViewCell.swift in Sources */,
 				9398825120460DAA0055174E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@
 import UIKit
 
 class RecipeViewController: UIViewController {
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -24,6 +25,7 @@ class RecipeViewController: UIViewController {
         super.viewDidLoad()
 
         titleLabel.text =  recipeInfo["recipe_title"] as? String
+        print(titleLabel.text)
         titleLabel.sizeToFit()
         timeLabel.text = String((recipeInfo["cook_time"] as? Int)!) + " min"
         timeLabel.sizeToFit()
