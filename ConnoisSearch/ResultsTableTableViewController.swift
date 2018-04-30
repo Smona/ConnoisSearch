@@ -130,9 +130,6 @@ class ResultsTableTableViewController: UITableViewController {
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "cellSegue", sender: self)
                     }
-                } catch {
-                    print("error trying to convert data to JSON")
-                    return
                 }
             }
             task.resume()
@@ -185,7 +182,7 @@ class ResultsTableTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "cellSegue" {
             if let destinationVC = segue.destination as? RecipeViewController {
-                destinationVC.recipeInfo = self.cellDict
+                destinationVC.recipeDict = self.cellDict
             }
         }
     }
