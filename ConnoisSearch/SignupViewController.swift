@@ -55,7 +55,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             title: "OK",
             style: UIAlertActionStyle.default) {
                 (action:UIAlertAction) in
-                print("OK button pressed");
         }
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion: nil)

@@ -50,7 +50,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     func searchAPI() {
         if let url = NSURL(string:"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?instructionsRequired=true&limitLicense=false&number=10&offset=0&query=" + searchTextField.text! + "&type=main+course") {
-            print(url)
             let request = NSMutableURLRequest(url:url as URL)
             request.httpMethod = "GET"
             request.addValue("P94NjqGeAkmshBXL0yGbztKyClfLp1JXYgUjsnvPETR0q1LSkb", forHTTPHeaderField: "X-Mashape-Key")

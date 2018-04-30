@@ -72,7 +72,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     title: "OK",
                     style: UIAlertActionStyle.default) {
                         (action:UIAlertAction) in
-                        print("OK button pressed");
                 }
                 alertController.addAction(OKAction)
                 self.present(alertController, animated: true, completion: nil)
@@ -86,12 +85,4 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
         
     }
-
- /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "loginID" {
-            print ("YAY")
-        }
-    }
- */
 }
