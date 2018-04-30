@@ -128,13 +128,13 @@
         <!--Settings-->
         <scene sceneID="dLu-qv-Spq">
             <objects>
-                <viewController title="Settings" id="2co-i3-Uuz" sceneMemberID="viewController">
+                <viewController title="Settings" id="2co-i3-Uuz" customClass="SettingsViewController" customModule="ConnoisSearch" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zjd-dv-5ic">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gG2-SV-NU2">
-                                <rect key="frame" x="16" y="39" width="343" height="318"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gG2-SV-NU2">
+                                <rect key="frame" x="16" y="39" width="343" height="394"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dietary Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u80-1U-oze">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
@@ -217,11 +217,27 @@
                                     <constraint firstAttribute="height" constant="318" id="xpQ-KE-vU3"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPF-Mu-Bfh">
+                                <rect key="frame" x="0.0" y="571" width="375" height="47"/>
+                                <color key="backgroundColor" red="0.86906392659999998" green="0.24627991020000001" blue="0.096693613540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="3Ai-em-MlP"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lqz-V3-gox" kind="show" identifier="logout" id="W3T-9x-iPo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gG2-SV-NU2" firstAttribute="top" secondItem="WIl-FH-NV8" secondAttribute="top" constant="19" id="Fx0-nl-NW2"/>
+                            <constraint firstItem="DPF-Mu-Bfh" firstAttribute="trailing" secondItem="WIl-FH-NV8" secondAttribute="trailing" id="LmS-AC-S22"/>
                             <constraint firstItem="gG2-SV-NU2" firstAttribute="centerX" secondItem="WIl-FH-NV8" secondAttribute="centerX" id="WZD-xf-q8Q"/>
+                            <constraint firstItem="DPF-Mu-Bfh" firstAttribute="bottom" secondItem="WIl-FH-NV8" secondAttribute="bottom" id="Zoe-tE-8C4"/>
+                            <constraint firstItem="DPF-Mu-Bfh" firstAttribute="leading" secondItem="WIl-FH-NV8" secondAttribute="leading" id="fqL-uL-I3Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WIl-FH-NV8"/>
                     </view>

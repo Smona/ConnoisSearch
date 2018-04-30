@@ -45,6 +45,7 @@
 		93AE0614207C5141004B20AF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AE0613207C5141004B20AF /* SignupViewController.swift */; };
 		93C71E772094E496003AFB1B /* RecipeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C71E762094E496003AFB1B /* RecipeItem.swift */; };
 		93C71E792094F0E5003AFB1B /* recipeItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C71E782094F0E5003AFB1B /* recipeItemTableViewCell.swift */; };
+		93FAD3A82096B78F00D1ECA1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FAD3A72096B78F00D1ECA1 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		93AE0613207C5141004B20AF /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		93C71E762094E496003AFB1B /* RecipeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItem.swift; sourceTree = "<group>"; };
 		93C71E782094F0E5003AFB1B /* recipeItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeItemTableViewCell.swift; sourceTree = "<group>"; };
+		93FAD3A72096B78F00D1ECA1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		9398824F20460DAA0055174E /* ConnoisSearch */ = {
 			isa = PBXGroup;
 			children = (
+				93FAD3A72096B78F00D1ECA1 /* SettingsViewController.swift */,
 				93C71E762094E496003AFB1B /* RecipeItem.swift */,
 				93C71E782094F0E5003AFB1B /* recipeItemTableViewCell.swift */,
 				9398825020460DAA0055174E /* AppDelegate.swift */,
@@ -292,6 +295,7 @@
 				8ACBFB232066DC5600E87C08 /* TabBarController.swift in Sources */,
 				93AE0614207C5141004B20AF /* SignupViewController.swift in Sources */,
 				93C71E772094E496003AFB1B /* RecipeItem.swift in Sources */,
+				93FAD3A82096B78F00D1ECA1 /* SettingsViewController.swift in Sources */,
 				8ACBFB212066D06000E87C08 /* LoginViewController.swift in Sources */,
 				8ACBFB292066ECD300E87C08 /* RecipeViewController.swift in Sources */,
 				8ACBFB272066EC2F00E87C08 /* ResultsTableTableViewController.swift in Sources */,
