@@ -9,7 +9,10 @@
 import UIKit
 
 class RecipeViewController: UIViewController {
+    static let emptyFaveBtn = UIImage(named: "favorite_button@3x.png")
+    static let filledFaveBtn = UIImage(named: "favorite_button_fill@3x.png")
     
+    @IBOutlet weak var favoriteBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -21,6 +24,7 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var loadingView: UILabel!
     @IBOutlet weak var recipeView: UIScrollView!
     
+    var isFavorite = false;
     var recipeDict = [String: Any]()
     var uid: Int?
     
@@ -62,6 +66,15 @@ class RecipeViewController: UIViewController {
         recipeView.isHidden = false
     }
     
+    @IBAction func toggleFavorite(_ sender: Any) {
+        if isFavorite {
+            favoriteBtn.setImage(RecipeViewController.emptyFaveBtn, for: .normal)
+        } else {
+            favoriteBtn.setImage(RecipeViewController.filledFaveBtn, for: .normal)
+        }
+        self.isFavorite = !isFavorite
+
+    }
     /*
     // MARK: - Navigation
 

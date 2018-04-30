@@ -305,7 +305,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Recipe..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bi-GW-tju">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -375,6 +375,9 @@
                                                 <state key="normal" image="favorite_button.png">
                                                     <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="toggleFavorite:" destination="Mcj-kf-mYI" eventType="touchUpInside" id="AAc-0a-wb4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -432,7 +435,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JLn-G5-Qsi"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="favoriteBtn" destination="QGw-Rd-T2o" id="fmQ-sw-o31"/>
                         <outlet property="image" destination="zun-Tf-5YI" id="Vcj-VR-th3"/>
                         <outlet property="ingredientsLabel" destination="hXa-kg-LWc" id="YTg-ox-eow"/>
                         <outlet property="instructionsLabel" destination="AbE-rN-mip" id="ajX-7n-w3S"/>
@@ -759,6 +765,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JZU-fY-umJ"/>
-        <segue reference="REN-Zo-yOV"/>
+        <segue reference="O8r-VG-Y0e"/>
     </inferredMetricsTieBreakers>
 </document>

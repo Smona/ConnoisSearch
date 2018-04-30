@@ -46,6 +46,7 @@
 		93C71E772094E496003AFB1B /* RecipeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C71E762094E496003AFB1B /* RecipeItem.swift */; };
 		93C71E792094F0E5003AFB1B /* recipeItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C71E782094F0E5003AFB1B /* recipeItemTableViewCell.swift */; };
 		93FAD3A82096B78F00D1ECA1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FAD3A72096B78F00D1ECA1 /* SettingsViewController.swift */; };
+		93FAD3AA2096D2CE00D1ECA1 /* favorite_button_fill@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FAD3A92096D2CE00D1ECA1 /* favorite_button_fill@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		93C71E762094E496003AFB1B /* RecipeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItem.swift; sourceTree = "<group>"; };
 		93C71E782094F0E5003AFB1B /* recipeItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeItemTableViewCell.swift; sourceTree = "<group>"; };
 		93FAD3A72096B78F00D1ECA1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		93FAD3A92096D2CE00D1ECA1 /* favorite_button_fill@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite_button_fill@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				9398827A20461AE90055174E /* sprout_transparent.png */,
 				93988275204616EF0055174E /* logo_transparent.png */,
+				93FAD3A92096D2CE00D1ECA1 /* favorite_button_fill@3x.png */,
 				939882692046142C0055174E /* favorite.png */,
 				939882652046142B0055174E /* favorite@2x.png */,
 				9398826A2046142C0055174E /* favorite@3x.png */,
@@ -270,6 +273,7 @@
 				93988279204618CE0055174E /* pexels-photo-349608.jpeg in Resources */,
 				9398826E2046142C0055174E /* favorite@2x.png in Resources */,
 				9398827B20461AE90055174E /* sprout_transparent.png in Resources */,
+				93FAD3AA2096D2CE00D1ECA1 /* favorite_button_fill@3x.png in Resources */,
 				9398827D204620510055174E /* mockup_recipe_img.jpeg in Resources */,
 				939FCDEE2096B20A00C16878 /* favorite_button@3x.png in Resources */,
 				93988276204616EF0055174E /* logo_transparent.png in Resources */,
