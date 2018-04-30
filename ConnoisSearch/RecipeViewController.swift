@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RecipeViewController: UIViewController {
     static let emptyFaveBtn = UIImage(named: "favorite_button@3x.png")
@@ -67,13 +68,15 @@ class RecipeViewController: UIViewController {
     }
     
     @IBAction func toggleFavorite(_ sender: Any) {
+        let ref = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/favorites/\(self.uid!)")
         if isFavorite {
             favoriteBtn.setImage(RecipeViewController.emptyFaveBtn, for: .normal)
+            ref.removeValue()
         } else {
             favoriteBtn.setImage(RecipeViewController.filledFaveBtn, for: .normal)
+            ref.setValue(true)
         }
         self.isFavorite = !isFavorite
-
     }
     /*
     // MARK: - Navigation
@@ -113,6 +116,9 @@ class RecipeViewController: UIViewController {
                         item = json;
                     }
                     
+                    if let id = item["id"] as? Int {
+                        self.recipeDict["id"] = id
+                    }
                     if let title = item["title"] as? String{
                         self.recipeDict["recipe_title"] = title
                     }
@@ -157,6 +163,9 @@ class RecipeViewController: UIViewController {
                         self.recipeDict["servings"] = servings
                     }
                     print(self.recipeDict)
+                    if self.uid == nil {
+                        self.uid = self.recipeDict["id"] as! Int
+                    }
                     
                     DispatchQueue.main.async {
                         self.displayRecipe()

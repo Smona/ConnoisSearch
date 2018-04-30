@@ -460,7 +460,7 @@
             <objects>
                 <viewController title="Search" id="8u7-WT-gKK" customClass="SearchViewController" customModule="ConnoisSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tEv-9l-NpO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Find a Recipe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhI-yd-eWM">
@@ -522,7 +522,7 @@
             <objects>
                 <tableViewController title="Search Results" id="aRV-af-A2E" customClass="ResultsTableTableViewController" customModule="ConnoisSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nMk-37-OrS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -764,7 +764,7 @@
         <image name="sprout_transparent.png" width="112" height="117"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JZU-fY-umJ"/>
+        <segue reference="FwS-UL-uSr"/>
         <segue reference="O8r-VG-Y0e"/>
     </inferredMetricsTieBreakers>
 </document>
