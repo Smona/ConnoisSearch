@@ -28,11 +28,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
           // Handle error
             self.presentError("Make sure you entered a valid email")
         } else {
-            print(user!.uid)
+            ///print(user!.uid)
             let ref = Database.database().reference()
             ref.child("/users/\(user!.uid)").setValue([
                 "favorites": [],
-                "email": user!.email
+                "email": user!.email,
+                "allergies": ["dairy":false, "gluten":false, "peanut":false],
+                "dietary preference": "none"
             ])
             self.performSegue(withIdentifier: "signedUpSuccess", sender: sender)
         }

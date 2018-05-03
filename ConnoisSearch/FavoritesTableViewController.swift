@@ -1,22 +1,29 @@
 //
-//  ResultsTableTableViewController.swift
+//  FavoritesTableViewController.swift
 //  ConnoisSearch
 //
-//  Created by Het Bharucha on 3/24/18.
+//  Created by Bharucha, Het S on 4/30/18.
 //  Copyright © 2018 group13. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
-class ResultsTableTableViewController: UITableViewController {
-
-    var searchResults:Array<RecipeItem> = []
-    var urlString = "https://spoonacular.com/recipeImages/"
+class FavoritesTableViewController: UITableViewController {
     
+    var favoritesResults:Array<RecipeItem> = []
+    var urlString = "https://spoonacular.com/recipeImages/"
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Results"
-        ///print(searchResults)
+        self.title = "Favorites"
+        ///print(favoritesResults)
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,16 +34,17 @@ class ResultsTableTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
+        return favoritesResults.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = searchResults[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as? recipeItemTableViewCell
+        let item = favoritesResults[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as? recipeItemTableViewCell
         cell?.recipeTitle.text = item.recipeTitle
         cell?.prepTime.text = String(describing: item.prepTime ?? 0) + "m"
         item.imageURL = urlString + item.imageURL!
@@ -46,7 +54,7 @@ class ResultsTableTableViewController: UITableViewController {
         cell?.uid = item.recipeID
         return cell!
     }
-
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return rowHeight(for: indexPath)
     }
@@ -90,18 +98,14 @@ class ResultsTableTableViewController: UITableViewController {
     }
     */
 
-
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "cellSegue" {
-            if let destinationVC = segue.destination as? RecipeViewController {
-                print("recipe cell segue")
-                if let item = sender as? recipeItemTableViewCell {
-                    destinationVC.uid = item.uid
-                }
-            }
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
+
 }

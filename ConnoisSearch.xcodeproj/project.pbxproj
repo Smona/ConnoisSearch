@@ -12,6 +12,7 @@
 		8ACBFB252066EBE400E87C08 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACBFB242066EBE400E87C08 /* SearchViewController.swift */; };
 		8ACBFB272066EC2F00E87C08 /* ResultsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACBFB262066EC2F00E87C08 /* ResultsTableTableViewController.swift */; };
 		8ACBFB292066ECD300E87C08 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACBFB282066ECD300E87C08 /* RecipeViewController.swift */; };
+		93298D902097A38400B14BE3 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93298D8F2097A38400B14BE3 /* FavoritesTableViewController.swift */; };
 		9345EACE2076D35800AE47B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9345EACD2076D35700AE47B9 /* GoogleService-Info.plist */; };
 		9345EAD12076D48200AE47B9 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9345EAD02076D48100AE47B9 /* FirebaseAnalytics.framework */; };
 		9345EAD32076D48700AE47B9 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9345EAD22076D48700AE47B9 /* FirebaseCore.framework */; };
@@ -55,6 +56,7 @@
 		8ACBFB242066EBE400E87C08 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8ACBFB262066EC2F00E87C08 /* ResultsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableTableViewController.swift; sourceTree = "<group>"; };
 		8ACBFB282066ECD300E87C08 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		93298D8F2097A38400B14BE3 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		9345EACD2076D35700AE47B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9345EAD02076D48100AE47B9 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		9345EAD22076D48700AE47B9 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		9398824F20460DAA0055174E /* ConnoisSearch */ = {
 			isa = PBXGroup;
 			children = (
+				93298D8F2097A38400B14BE3 /* FavoritesTableViewController.swift */,
 				93FAD3A72096B78F00D1ECA1 /* SettingsViewController.swift */,
 				93C71E762094E496003AFB1B /* RecipeItem.swift */,
 				93C71E782094F0E5003AFB1B /* recipeItemTableViewCell.swift */,
@@ -301,6 +304,7 @@
 				93C71E772094E496003AFB1B /* RecipeItem.swift in Sources */,
 				93FAD3A82096B78F00D1ECA1 /* SettingsViewController.swift in Sources */,
 				8ACBFB212066D06000E87C08 /* LoginViewController.swift in Sources */,
+				93298D902097A38400B14BE3 /* FavoritesTableViewController.swift in Sources */,
 				8ACBFB292066ECD300E87C08 /* RecipeViewController.swift in Sources */,
 				8ACBFB272066EC2F00E87C08 /* ResultsTableTableViewController.swift in Sources */,
 				8ACBFB252066EBE400E87C08 /* SearchViewController.swift in Sources */,

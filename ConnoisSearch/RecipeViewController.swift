@@ -149,7 +149,6 @@ class RecipeViewController: UIViewController {
                             let amount = i["amount"] as! NSNumber
                             let unit = i["unit"] as! String
                             let name = i["name"] as! String
-                            print(amount)
                             ingredientArray.append(String(describing: amount) + " " + unit + " " + name)
                         }
                         self.recipeDict["ingredients"] = ingredientArray
@@ -162,7 +161,7 @@ class RecipeViewController: UIViewController {
                     if let servings = item["servings"] as? Int{
                         self.recipeDict["servings"] = servings
                     }
-                    print(self.recipeDict)
+                    ///print(self.recipeDict)
                     if self.uid == nil {
                         self.uid = self.recipeDict["id"] as! Int
                     }
