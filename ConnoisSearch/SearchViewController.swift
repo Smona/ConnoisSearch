@@ -98,12 +98,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "searchID" {
             if let destinationVC = segue.destination as? ResultsTableTableViewController {
                 destinationVC.searchResults = self.results
+                self.results = []
             }
         }
     }
     
     func searchAPI() {
-        if let url = NSURL(string:"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?\(self.diet)instructionsRequired=true&\(self.allergies)limitLicense=false&number=5&offset=0&query=" + searchTextField.text!) {
+        if let url = NSURL(string:"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?\(self.diet)instructionsRequired=true&\(self.allergies)limitLicense=false&number=10&offset=0&query=" + searchTextField.text!) {
             let request = NSMutableURLRequest(url:url as URL)
             request.httpMethod = "GET"
             request.addValue("P94NjqGeAkmshBXL0yGbztKyClfLp1JXYgUjsnvPETR0q1LSkb", forHTTPHeaderField: "X-Mashape-Key")
@@ -124,13 +125,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                         print("error trying to convert data to JSON")
                         return
                     }
-                    print(json.description)
+                    //print(json.description)
                     let header = json["results"] as? [[String: Any]]
                     for item in header! {
                         let recipeItem = RecipeItem.create(_recipeID: item["id"] as! Int, _imageURL: item["image"] as! String, _recipeTitle: item["title"] as! String, _prepTime: item["readyInMinutes"] as! Int)
                         self.results.append(recipeItem)
                     }
-                    print(self.results)
+                    //print(self.results)
                     DispatchQueue.main.async {
                         self.searchButton.setTitle("Search", for: UIControlState.normal)
                         self.performSegue(withIdentifier: "searchID", sender: self)

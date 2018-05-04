@@ -11,19 +11,41 @@ import Firebase
 
 class FavoritesTableViewController: UITableViewController {
     
+    @IBOutlet var favoritesTableView: UITableView!
     var favorites:Array<RecipeItem> = []
     var urlString = "https://spoonacular.com/recipeImages/"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let handle3 = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/favorites").observe(.childAdded, with: { (snapshot) in
-            print(snapshot.key)
+        Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/favorites").observe(.childAdded, with: { (snapshot) in
+            RecipeViewController.fetchRecipe(snapshot.key + "/information?includeNutrition=false") { data in
+                print(data)
+                guard let id = data["id"] as? Int else {
+                    print("Error: Missing id in Recipe response")
+                    return
+                }
+                guard let imgUrl = data["image_url"] as? String else {
+                    print("Error: Missing recipe image url")
+                    return
+                }
+                guard let title = data["recipe_title"] as? String else {
+                    print("Error: Missing recipe title")
+                    return
+                }
+                guard let time = data["cook_time"] as? Int else {
+                    print("Error: Mising recipe prep time")
+                    return
+                }
+                self.favorites.append(RecipeItem(recipeID: id, imageURL: imgUrl, recipeTitle: title, prepTime: time))
+            }
         })
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        favoritesTableView.tableFooterView = UIView(frame: CGRect.zero) // hide extra table cells
     }
 
     override func didReceiveMemoryWarning() {

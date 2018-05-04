@@ -56,11 +56,12 @@ class RecipeViewController: UIViewController {
     
     func displayRecipe() {
         titleLabel.text =  recipeDict["recipe_title"] as? String
-        titleLabel.sizeToFit()
-        timeLabel.text = String((recipeDict["cook_time"] as? Int)!) + " min"
-        timeLabel.sizeToFit()
-        servingsLabel.text = String((recipeDict["servings"] as? Int)!) + " serving(s)"
-        servingsLabel.sizeToFit()
+        if let cookTime = recipeDict["cook_time"] as? Int {
+            timeLabel.text = String(cookTime) + " min"
+        }
+        if let servings = recipeDict["servings"] as? Int {
+            servingsLabel.text = String(servings) + (servings == 1 ? " serving" : " servings")
+        }
         instructionsLabel.text = (recipeDict["instructions"] as? String)!
         instructionsLabel.sizeToFit()
         
@@ -128,7 +129,6 @@ class RecipeViewController: UIViewController {
                         item = json;
                     }
                     print(item)
-                    
                     if let id = item["id"] as? Int {
                         recipeDict["id"] = id
                     }
@@ -150,7 +150,7 @@ class RecipeViewController: UIViewController {
                     if let vegetarian = item["vegetarian"] as? Int{
                         recipeDict["vegetarian"] = vegetarian
                     }
-                    if let cookTime = item["readyInMinutes"] as? Int{
+                    if let cookTime = item["preparationMinutes"] as? Int{
                         recipeDict["cook_time"] = cookTime
                     }
                     if let instructions = item["instructions"] as? String{
@@ -162,7 +162,7 @@ class RecipeViewController: UIViewController {
                             let amount = i["amount"] as! NSNumber
                             let unit = i["unit"] as! String
                             let name = i["name"] as! String
-                            ingredientArray.append(String(describing: amount) + " " + unit + " " + name)
+                            ingredientArray.append("• " + String(describing: amount) + " " + unit + " " + name)
                         }
                         recipeDict["ingredients"] = ingredientArray
                     }
