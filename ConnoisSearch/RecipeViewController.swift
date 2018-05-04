@@ -36,6 +36,21 @@ class RecipeViewController: UIViewController {
             query = uid.description + "/information?includeNutrition=false"
         } else {                // random recipe
             query = "random?limitLicense=false&number=1"
+            let userHandle = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)")
+            userHandle.child("/dietary preference").observe(.value, with: { (snapshot) in
+                if let dietBool = snapshot.value as? String {
+                    if dietBool == "none"{
+                        query = "random?limitLicense=false&number=1"
+                    }
+                    if dietBool == "vegetarian"{
+                        query = "random?limitLicense=false&number=1&tags=vegetarian"
+                    }
+                    if dietBool == "vegan"{
+                        query = "random?limitLicense=false&number=1&tags=vegan"
+                    }
+                }
+                print(query)
+            })
         }
 
         RecipeViewController.fetchRecipe(query) { data in
