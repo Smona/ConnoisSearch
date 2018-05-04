@@ -10,13 +10,18 @@ import UIKit
 
 class ResultsTableTableViewController: UITableViewController {
 
+    @IBOutlet weak var noneFoundLabel: UILabel!
+    @IBOutlet var resultsTableView: UITableView!
     var searchResults:Array<RecipeItem> = []
     var urlString = "https://spoonacular.com/recipeImages/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Results"
-        ///print(searchResults)
+        resultsTableView.tableFooterView = UIView(frame: CGRect.zero) // hide extra table cells
+        if searchResults.count > 0 {
+            noneFoundLabel.frame.size.height = 0
+        }
     }
 
     override func didReceiveMemoryWarning() {

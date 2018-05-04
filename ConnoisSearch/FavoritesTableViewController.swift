@@ -17,28 +17,12 @@ class FavoritesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/favorites").observe(.childAdded, with: { (snapshot) in
-            RecipeViewController.fetchRecipe(snapshot.key + "/information?includeNutrition=false") { data in
-                print(data)
-                guard let id = data["id"] as? Int else {
-                    print("Error: Missing id in Recipe response")
-                    return
-                }
-                guard let imgUrl = data["image_url"] as? String else {
-                    print("Error: Missing recipe image url")
-                    return
-                }
-                guard let title = data["recipe_title"] as? String else {
-                    print("Error: Missing recipe title")
-                    return
-                }
-                guard let time = data["cook_time"] as? Int else {
-                    print("Error: Mising recipe prep time")
-                    return
-                }
-                self.favorites.append(RecipeItem(recipeID: id, imageURL: imgUrl, recipeTitle: title, prepTime: time))
-            }
-        })
+        
+        // Add new cells for each favorite
+        let favoritesRef = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/favorites")
+        favoritesRef.observe(.childAdded) { snapshot in
+            self.addFavorite(snapshot.key)
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -84,6 +68,34 @@ class FavoritesTableViewController: UITableViewController {
     private func rowHeight(for indexPath: IndexPath) -> CGFloat {
         return 65
     }
+    
+    func addFavorite(_ uid: String) {
+        RecipeViewController.fetchRecipe(uid + "/information?includeNutrition=false") { data in
+            print(data)
+            guard let id = data["id"] as? Int else {
+                print("Error: Missing id in Recipe response")
+                return
+            }
+            guard let imgUrl = data["image_url"] as? String else {
+                print("Error: Missing recipe image url")
+                return
+            }
+            guard let title = data["recipe_title"] as? String else {
+                print("Error: Missing recipe title")
+                return
+            }
+            guard let time = data["cook_time"] as? Int else {
+                print("Error: Mising recipe prep time")
+                return
+            }
+            
+            self.favorites.append(RecipeItem(recipeID: id, imageURL: imgUrl, recipeTitle: title, prepTime: time))
+            let indexPath = IndexPath(row: self.favorites.count - 1, section: 0)
+            self.favoritesTableView.beginUpdates()
+            self.favoritesTableView.insertRows(at: [indexPath], with: .automatic)
+            self.favoritesTableView.endUpdates()
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -120,14 +132,19 @@ class FavoritesTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showFavorite" {
+            guard let cell = sender as? recipeItemTableViewCell else {
+                print(sender!)
+                return
+            }
+            let recipeView = segue.destination as! RecipeViewController
+            recipeView.uid = cell.uid
+        }
     }
-    */
 
 }
