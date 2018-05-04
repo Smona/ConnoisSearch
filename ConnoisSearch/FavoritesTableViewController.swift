@@ -53,7 +53,6 @@ class FavoritesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as? recipeItemTableViewCell
         cell?.recipeTitle.text = item.recipeTitle
         cell?.prepTime.text = String(describing: item.prepTime ?? 0) + "m"
-        item.imageURL = urlString + item.imageURL!
         let url = URL(string: item.imageURL!)
         let data = try? Data(contentsOf: url!)
         cell?.recipeImage.image = UIImage(data: data!)
@@ -71,7 +70,6 @@ class FavoritesTableViewController: UITableViewController {
     
     func addFavorite(_ uid: String) {
         RecipeViewController.fetchRecipe(uid + "/information?includeNutrition=false") { data in
-            print(data)
             guard let id = data["id"] as? Int else {
                 print("Error: Missing id in Recipe response")
                 return

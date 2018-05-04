@@ -125,13 +125,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                         print("error trying to convert data to JSON")
                         return
                     }
-                    //print(json.description)
+                    
                     let header = json["results"] as? [[String: Any]]
                     for item in header! {
                         let recipeItem = RecipeItem.create(_recipeID: item["id"] as! Int, _imageURL: item["image"] as! String, _recipeTitle: item["title"] as! String, _prepTime: item["readyInMinutes"] as! Int)
                         self.results.append(recipeItem)
                     }
-                    //print(self.results)
+                    
                     DispatchQueue.main.async {
                         self.searchButton.setTitle("Search", for: UIControlState.normal)
                         self.performSegue(withIdentifier: "searchID", sender: self)

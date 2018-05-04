@@ -38,7 +38,6 @@ class RecipeViewController: UIViewController {
             query = "random?limitLicense=false&number=1"
         }
 
-        print(query)
         RecipeViewController.fetchRecipe(query) { data in
             self.recipeDict = data
             if let uid = data["id"] as? Int {
@@ -128,7 +127,6 @@ class RecipeViewController: UIViewController {
                     } else { // single recipe
                         item = json;
                     }
-                    print(item)
                     if let id = item["id"] as? Int {
                         recipeDict["id"] = id
                     }

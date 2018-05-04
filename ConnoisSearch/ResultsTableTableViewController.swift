@@ -102,7 +102,6 @@ class ResultsTableTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "cellSegue" {
             if let destinationVC = segue.destination as? RecipeViewController {
-                print("recipe cell segue")
                 if let item = sender as? recipeItemTableViewCell {
                     destinationVC.uid = item.uid
                 }
