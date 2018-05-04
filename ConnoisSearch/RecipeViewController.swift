@@ -31,11 +31,21 @@ class RecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var query: String
         if let uid = self.uid { // specific recipe
-            print(uid.description)
-            self.fetchRecipe("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" + uid.description + "/information?includeNutrition=false")
+            query = uid.description + "/information?includeNutrition=false"
         } else {                // random recipe
-            self.fetchRecipe("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1")
+            query = "random?limitLicense=false&number=1"
+        }
+
+        print(query)
+        RecipeViewController.fetchRecipe(query) { data in
+            self.recipeDict = data
+            if let uid = data["id"] as? Int {
+                self.uid = uid
+            }
+            self.displayRecipe()
+            return
         }
     }
 
@@ -87,8 +97,10 @@ class RecipeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    func fetchRecipe(_ query: String) {
-        if let url = NSURL(string: query) {
+    static func fetchRecipe(_ query: String, callback: @escaping (_ data: [String: Any]) -> Void)  {
+        var recipeDict: [String: Any] = [:]
+        
+        if let url = NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" + query) {
             let request = NSMutableURLRequest(url:url as URL)
             request.httpMethod = "GET"
             request.addValue("P94NjqGeAkmshBXL0yGbztKyClfLp1JXYgUjsnvPETR0q1LSkb", forHTTPHeaderField: "X-Mashape-Key")
@@ -115,33 +127,34 @@ class RecipeViewController: UIViewController {
                     } else { // single recipe
                         item = json;
                     }
+                    print(item)
                     
                     if let id = item["id"] as? Int {
-                        self.recipeDict["id"] = id
+                        recipeDict["id"] = id
                     }
                     if let title = item["title"] as? String{
-                        self.recipeDict["recipe_title"] = title
+                        recipeDict["recipe_title"] = title
                     }
                     if let image = item["image"] as? String{
-                        self.recipeDict["image_url"] = image
+                        recipeDict["image_url"] = image
                     }
                     if let glutenFree = item["glutenFree"] as? Int{
-                        self.recipeDict["gluten_free"] = glutenFree
+                        recipeDict["gluten_free"] = glutenFree
                     }
                     if let dairyFree = item["dairyFree"] as? Int{
-                        self.recipeDict["dairy_free"] = dairyFree
+                        recipeDict["dairy_free"] = dairyFree
                     }
                     if let vegan = item["vegan"] as? Int{
-                        self.recipeDict["vegan"] = vegan
+                        recipeDict["vegan"] = vegan
                     }
                     if let vegetarian = item["vegetarian"] as? Int{
-                        self.recipeDict["vegetarian"] = vegetarian
+                        recipeDict["vegetarian"] = vegetarian
                     }
                     if let cookTime = item["readyInMinutes"] as? Int{
-                        self.recipeDict["cook_time"] = cookTime
+                        recipeDict["cook_time"] = cookTime
                     }
                     if let instructions = item["instructions"] as? String{
-                        self.recipeDict["instructions"] = instructions
+                        recipeDict["instructions"] = instructions
                     }
                     if let ingredients = item["extendedIngredients"] as? [[String: Any]]{
                         var ingredientArray = [String]()
@@ -151,23 +164,19 @@ class RecipeViewController: UIViewController {
                             let name = i["name"] as! String
                             ingredientArray.append(String(describing: amount) + " " + unit + " " + name)
                         }
-                        self.recipeDict["ingredients"] = ingredientArray
+                        recipeDict["ingredients"] = ingredientArray
                     }
                     //TO CHECK AND SEE IF INFORMATION GRABBED CORRECTLY:
                     if let recipeURL = item["spoonacularSourceUrl"] as? String{
-                        self.recipeDict["source url"] = recipeURL
+                        recipeDict["source url"] = recipeURL
                     }
                     
                     if let servings = item["servings"] as? Int{
-                        self.recipeDict["servings"] = servings
-                    }
-                    ///print(self.recipeDict)
-                    if self.uid == nil {
-                        self.uid = self.recipeDict["id"] as! Int
+                        recipeDict["servings"] = servings
                     }
                     
                     DispatchQueue.main.async {
-                        self.displayRecipe()
+                        callback(recipeDict)
                     }
                 } catch {
                     print("error trying to convert data to JSON")

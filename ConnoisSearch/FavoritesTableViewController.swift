@@ -11,14 +11,14 @@ import Firebase
 
 class FavoritesTableViewController: UITableViewController {
     
-    var favoritesResults:Array<RecipeItem> = []
+    var favorites:Array<RecipeItem> = []
     var urlString = "https://spoonacular.com/recipeImages/"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Favorites"
-        ///print(favoritesResults)
-
+        let handle3 = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/favorites").observe(.childAdded, with: { (snapshot) in
+            print(snapshot.key)
+        })
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -39,11 +39,11 @@ class FavoritesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoritesResults.count
+        return favorites.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = favoritesResults[indexPath.row]
+        let item = favorites[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as? recipeItemTableViewCell
         cell?.recipeTitle.text = item.recipeTitle
         cell?.prepTime.text = String(describing: item.prepTime ?? 0) + "m"
