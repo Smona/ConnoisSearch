@@ -27,58 +27,58 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         searchTextField.delegate = self
         
-        let handle = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/dietary preference").observe(.value, with: { (snapshot) in
-            let dietBool = snapshot.value as! String
-            if dietBool == "none"{
-                self.diet = ""
+        let userHandle = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)")
+        userHandle.child("/dietary preference").observe(.value, with: { (snapshot) in
+            if let dietBool = snapshot.value as? String {
+                if dietBool == "none"{
+                    self.diet = ""
+                }
+                if dietBool == "vegetarian"{
+                    self.diet = "diet=vegetarian&"
+                }
+                if dietBool == "vegan"{
+                    self.diet = "diet=vegan&"
+                }
             }
-            if dietBool == "vegetarian"{
-                self.diet = "diet=vegetarian&"
-            }
-            if dietBool == "vegan"{
-                self.diet = "diet=vegan&"
-            }
-            
         })
         
-        let handle2 = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/allergies").observe(.value, with: { (snapshot) in
-            let userDict = snapshot.value as! [String: Any]
-            
-            let dairyBool = userDict["dairy"] as! Bool
-            if dairyBool == true{
-                self.allergies = "intolerances=dairy&"
-            }
-            
-            let glutenBool = userDict["gluten"] as! Bool
-            if glutenBool == true{
-                self.allergies = "intolerances=gluten&"
-            }
-            
-            let peanutBool = userDict["peanut"] as! Bool
-            if peanutBool == true{
-                self.allergies = "intolerances=peanut&"
-            }
-            if dairyBool == true && glutenBool == true{
-                self.allergies = "intolerances=dairy%2C+gluten&"
-            }
-            if dairyBool == true && peanutBool == true{
-                self.allergies = "intolerances=dairy%2C+peanut&"
-            }
-            if glutenBool == true && peanutBool == true{
-                self.allergies = "intolerances=gluten%2C+peanut&"
-            }
-            if glutenBool == true && peanutBool == true && dairyBool == true{
-                self.allergies = "intolerances=gluten%2C+peanut%2C+dairy&"
+        userHandle.child("allergies").observe(.value, with: { (snapshot) in
+            if let userDict = snapshot.value as? [String: Any] {
+                let dairyBool = userDict["dairy"] as! Bool
+                if dairyBool == true{
+                    self.allergies = "intolerances=dairy&"
+                }
+                
+                let glutenBool = userDict["gluten"] as! Bool
+                if glutenBool == true{
+                    self.allergies = "intolerances=gluten&"
+                }
+                
+                let peanutBool = userDict["peanut"] as! Bool
+                if peanutBool == true{
+                    self.allergies = "intolerances=peanut&"
+                }
+                if dairyBool == true && glutenBool == true{
+                    self.allergies = "intolerances=dairy%2C+gluten&"
+                }
+                if dairyBool == true && peanutBool == true{
+                    self.allergies = "intolerances=dairy%2C+peanut&"
+                }
+                if glutenBool == true && peanutBool == true{
+                    self.allergies = "intolerances=gluten%2C+peanut&"
+                }
+                if glutenBool == true && peanutBool == true && dairyBool == true{
+                    self.allergies = "intolerances=gluten%2C+peanut%2C+dairy&"
+                }
             }
         })
         
         let handle3 = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/favorites").observe(.value, with: { (snapshot) in
-            let userDict = snapshot.value as! [String: Any]
-            
-            for i in userDict{
-                self.favoritesDict.append(i.key)
+            if let userDict = snapshot.value as? [String: Any] {
+                for i in userDict{
+                    self.favoritesDict.append(i.key)
+                }
             }
-            ///print(self.favoritesDict)
         })
     }
     

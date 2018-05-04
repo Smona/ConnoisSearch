@@ -18,38 +18,37 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let handle = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/dietary preference").observe(.value, with: { (snapshot) in
-            let dietBool = snapshot.value as! String
-            if dietBool == "none"{
-                self.segmentedControl.selectedSegmentIndex = 0
+        Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/dietary preference").observe(.value, with: { (snapshot) in
+            if let dietBool = snapshot.value as? String {
+                if dietBool == "none"{
+                    self.segmentedControl.selectedSegmentIndex = 0
+                }
+                if dietBool == "vegetarian"{
+                    self.segmentedControl.selectedSegmentIndex = 1
+                }
+                if dietBool == "vegan"{
+                    self.segmentedControl.selectedSegmentIndex = 2
+                }
             }
-            if dietBool == "vegetarian"{
-                self.segmentedControl.selectedSegmentIndex = 1
-            }
-            if dietBool == "vegan"{
-                self.segmentedControl.selectedSegmentIndex = 2
-            }
-            
         })
         
-        let handle2 = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/allergies").observe(.value, with: { (snapshot) in
-            let userDict = snapshot.value as! [String: Any]
-
-            let dairyBool = userDict["dairy"] as! Bool
-            if dairyBool == true{
-                self.dairySwitch.setOn(true, animated: true)
+        Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/allergies").observe(.value, with: { (snapshot) in
+            if let userDict = snapshot.value as? [String: Any] {
+                let dairyBool = userDict["dairy"] as! Bool
+                if dairyBool == true{
+                    self.dairySwitch.setOn(true, animated: true)
+                }
+                
+                let glutenBool = userDict["gluten"] as! Bool
+                if glutenBool == true{
+                    self.glutenSwitch.setOn(true, animated: true)
+                }
+                
+                let peanutBool = userDict["peanut"] as! Bool
+                if peanutBool == true{
+                    self.peanutSwitch.setOn(true, animated: true)
+                }
             }
-            
-            let glutenBool = userDict["gluten"] as! Bool
-            if glutenBool == true{
-                self.glutenSwitch.setOn(true, animated: true)
-            }
-            
-            let peanutBool = userDict["peanut"] as! Bool
-            if peanutBool == true{
-                self.peanutSwitch.setOn(true, animated: true)
-            }
-            
         })
     }
 
