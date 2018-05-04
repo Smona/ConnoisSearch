@@ -133,88 +133,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gG2-SV-NU2">
-                                <rect key="frame" x="16" y="39" width="343" height="394"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dietary Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u80-1U-oze">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allergies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Li-gk-2HJ">
-                                        <rect key="frame" x="0.0" y="79" width="343" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zVj-DR-PxQ">
-                                        <rect key="frame" x="0.0" y="186" width="49" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="onTintColor" red="0.51772841670000003" green="0.92567370049999997" blue="0.51772841670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="peanutToggle:" destination="2co-i3-Uuz" eventType="valueChanged" id="iSu-1T-C7W"/>
-                                        </connections>
-                                    </switch>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G8u-mK-kAe">
-                                        <rect key="frame" x="0.0" y="147" width="49" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="onTintColor" red="0.51772841670000003" green="0.92567370049999997" blue="0.51772841670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="glutenToggle:" destination="2co-i3-Uuz" eventType="valueChanged" id="vb6-Uv-r3n"/>
-                                        </connections>
-                                    </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peanuts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNa-s3-JuE">
-                                        <rect key="frame" x="59" y="191" width="62" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dairy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEG-jG-EWl">
-                                        <rect key="frame" x="59" y="113" width="40" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qOk-gb-7tj">
-                                        <rect key="frame" x="0.0" y="108" width="49" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="onTintColor" red="0.51772841672216463" green="0.92567370045555564" blue="0.51772841672216463" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="dairyToggle:" destination="2co-i3-Uuz" eventType="valueChanged" id="oS3-YD-tRp"/>
-                                        </connections>
-                                    </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gluten" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7r1-t2-3M7">
-                                        <rect key="frame" x="59" y="152" width="51" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WCj-Co-pbB">
-                                        <rect key="frame" x="0.0" y="29" width="343" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <segments>
-                                            <segment title="None"/>
-                                            <segment title="Vegetarian"/>
-                                            <segment title="Vegan"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.0" green="0.70980392160000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="dietaryChange:" destination="2co-i3-Uuz" eventType="valueChanged" id="cWF-sN-69X"/>
-                                        </connections>
-                                    </segmentedControl>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="GiQ-vf-dNl"/>
-                                    <constraint firstAttribute="height" constant="318" id="xpQ-KE-vU3"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPF-Mu-Bfh">
                                 <rect key="frame" x="0.0" y="571" width="375" height="47"/>
                                 <color key="backgroundColor" red="0.86906392659999998" green="0.24627991020000001" blue="0.096693613540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -228,10 +146,99 @@
                                     <segue destination="lqz-V3-gox" kind="show" identifier="logout" id="W3T-9x-iPo"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gG2-SV-NU2">
+                                <rect key="frame" x="16" y="54" width="343" height="260"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dietary Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u80-1U-oze">
+                                        <rect key="frame" x="0.0" y="42" width="343" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WCj-Co-pbB">
+                                        <rect key="frame" x="0.0" y="71" width="343" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="None"/>
+                                            <segment title="Vegetarian"/>
+                                            <segment title="Vegan"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.0" green="0.70980392160000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="dietaryChange:" destination="2co-i3-Uuz" eventType="valueChanged" id="cWF-sN-69X"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfG-0M-DL1">
+                                        <rect key="frame" x="0.0" y="8" width="343" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allergies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Li-gk-2HJ">
+                                        <rect key="frame" x="0.0" y="107" width="343" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zVj-DR-PxQ">
+                                        <rect key="frame" x="0.0" y="214" width="49" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="onTintColor" red="0.51772841670000003" green="0.92567370049999997" blue="0.51772841670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="peanutToggle:" destination="2co-i3-Uuz" eventType="valueChanged" id="iSu-1T-C7W"/>
+                                        </connections>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G8u-mK-kAe">
+                                        <rect key="frame" x="0.0" y="175" width="49" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="onTintColor" red="0.51772841670000003" green="0.92567370049999997" blue="0.51772841670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="glutenToggle:" destination="2co-i3-Uuz" eventType="valueChanged" id="vb6-Uv-r3n"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peanuts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNa-s3-JuE">
+                                        <rect key="frame" x="58" y="219" width="62" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dairy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEG-jG-EWl">
+                                        <rect key="frame" x="58" y="141" width="40" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qOk-gb-7tj">
+                                        <rect key="frame" x="0.0" y="136" width="49" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="onTintColor" red="0.51772841672216463" green="0.92567370045555564" blue="0.51772841672216463" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="dairyToggle:" destination="2co-i3-Uuz" eventType="valueChanged" id="oS3-YD-tRp"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gluten" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7r1-t2-3M7">
+                                        <rect key="frame" x="58" y="180" width="51" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="GiQ-vf-dNl"/>
+                                    <constraint firstAttribute="height" constant="260" id="xpQ-KE-vU3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gG2-SV-NU2" firstAttribute="top" secondItem="WIl-FH-NV8" secondAttribute="top" constant="19" id="Fx0-nl-NW2"/>
+                            <constraint firstItem="gG2-SV-NU2" firstAttribute="top" secondItem="WIl-FH-NV8" secondAttribute="top" constant="34" id="Fx0-nl-NW2"/>
                             <constraint firstItem="DPF-Mu-Bfh" firstAttribute="trailing" secondItem="WIl-FH-NV8" secondAttribute="trailing" id="LmS-AC-S22"/>
                             <constraint firstItem="gG2-SV-NU2" firstAttribute="centerX" secondItem="WIl-FH-NV8" secondAttribute="centerX" id="WZD-xf-q8Q"/>
                             <constraint firstItem="DPF-Mu-Bfh" firstAttribute="bottom" secondItem="WIl-FH-NV8" secondAttribute="bottom" id="Zoe-tE-8C4"/>
@@ -442,26 +449,12 @@
                                     <segue destination="Mcj-kf-mYI" kind="show" id="REN-Zo-yOV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7c-yF-EJ8">
-                                <rect key="frame" x="156" y="505" width="62" height="30"/>
-                                <state key="normal" title="Favorites">
-                                    <color key="titleColor" red="0.094370685517787933" green="0.72694879770278931" blue="0.99944287538528442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="favoritesClicked:" destination="8u7-WT-gKK" eventType="touchUpInside" id="k3M-8g-cmI"/>
-                                    <segue destination="v34-Vw-qVH" kind="show" identifier="favoriteSegue" id="Gkg-wz-Dua"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AFN-fv-74l" firstAttribute="trailing" secondItem="U7c-yF-EJ8" secondAttribute="trailing" constant="157" id="2Pf-WS-Jod"/>
-                            <constraint firstItem="AFN-fv-74l" firstAttribute="bottom" secondItem="U7c-yF-EJ8" secondAttribute="bottom" constant="19" id="3GT-Im-NDM"/>
                             <constraint firstItem="T2o-fv-VuH" firstAttribute="leading" secondItem="AFN-fv-74l" secondAttribute="leading" id="Km2-Bx-5bF"/>
                             <constraint firstItem="nhI-yd-eWM" firstAttribute="leading" secondItem="AFN-fv-74l" secondAttribute="leading" id="P6q-ZR-44t"/>
-                            <constraint firstItem="U7c-yF-EJ8" firstAttribute="leading" secondItem="AFN-fv-74l" secondAttribute="leading" constant="156" id="RQC-Ox-ZbU"/>
                             <constraint firstItem="T2o-fv-VuH" firstAttribute="top" secondItem="amJ-oC-48A" secondAttribute="bottom" constant="8" id="Zx6-Q7-lhK"/>
-                            <constraint firstItem="U7c-yF-EJ8" firstAttribute="top" secondItem="T2o-fv-VuH" secondAttribute="bottom" constant="399" id="bWR-3w-e10"/>
                             <constraint firstAttribute="trailing" secondItem="amJ-oC-48A" secondAttribute="trailing" id="qqT-42-NcZ"/>
                             <constraint firstItem="T2o-fv-VuH" firstAttribute="top" secondItem="amJ-oC-48A" secondAttribute="bottom" constant="8" id="qvM-s9-BFh"/>
                             <constraint firstItem="nhI-yd-eWM" firstAttribute="top" secondItem="AFN-fv-74l" secondAttribute="top" id="qxB-VN-MbM"/>
@@ -477,7 +470,6 @@
                         <barButtonItem key="backBarButtonItem" title="Discover" id="y6x-eG-QON"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="favoriteButton" destination="U7c-yF-EJ8" id="Ncm-XG-mvX"/>
                         <outlet property="searchButton" destination="amJ-oC-48A" id="e0e-ll-fDW"/>
                         <outlet property="searchTextField" destination="nhI-yd-eWM" id="lQz-mX-IU5"/>
                         <segue destination="aRV-af-A2E" kind="show" identifier="searchID" id="GjW-3O-IUD"/>
@@ -687,6 +679,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="qoD-pC-atR" kind="relationship" relationship="viewControllers" id="djO-3t-2yd"/>
+                        <segue destination="v34-Vw-qVH" kind="relationship" relationship="viewControllers" id="79Z-ft-gCc"/>
                         <segue destination="2co-i3-Uuz" kind="relationship" relationship="viewControllers" id="n4U-oH-nGJ"/>
                     </connections>
                 </tabBarController>
@@ -727,7 +720,7 @@
             <objects>
                 <tableViewController title="Favorites" id="v34-Vw-qVH" customClass="FavoritesTableViewController" customModule="ConnoisSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lEh-eJ-jk5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -794,7 +787,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJW-pc-I1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="655" y="799"/>
+            <point key="canvasLocation" x="724" y="467"/>
         </scene>
     </scenes>
     <resources>
