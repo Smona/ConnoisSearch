@@ -23,6 +23,21 @@ class FavoritesTableViewController: UITableViewController {
         favoritesRef.observe(.childAdded) { snapshot in
             self.addFavorite(snapshot.key)
         }
+        favoritesRef.observe(.childRemoved) { snapshot in
+            for var i in 0..<self.favorites.count {
+                print(i)
+                print(self.favorites[i])
+                let recipe = self.favorites[i]
+                if String(describing: recipe.recipeID) == snapshot.key {
+                    self.favorites.remove(at: i)
+                    let indexPath = IndexPath(row: i, section: 0)
+                    self.tableView.beginUpdates()
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.tableView.endUpdates()
+                    return
+                }
+            }
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -94,25 +109,26 @@ class FavoritesTableViewController: UITableViewController {
         }
     }
 
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let id = self.favorites[indexPath.row].recipeID
+            Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/favorites/\(id)").removeValue()
+            self.favorites.remove(at: indexPath.row)
+            tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.

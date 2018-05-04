@@ -43,9 +43,28 @@ class RecipeViewController: UIViewController {
             if let uid = data["id"] as? Int {
                 self.uid = uid
             }
+            // Check if a favorite
+            let favesRef = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/favorites")
+            favesRef.observe(.childAdded) { snapshot in
+                print(snapshot.key)
+                print(String(describing: self.uid!))
+                if snapshot.key == String(describing: self.uid!) {
+                    self.isFavorite = true
+                    self.setFavoriteBtnImg(self.isFavorite)
+                }
+            }
+            favesRef.observe(.childRemoved) { snapshot in
+                if snapshot.key == String(describing: self.uid!) {
+                    self.isFavorite = false
+                    self.setFavoriteBtnImg(self.isFavorite)
+                }
+            }
+            
             self.displayRecipe()
             return
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,15 +101,19 @@ class RecipeViewController: UIViewController {
     }
     
     @IBAction func toggleFavorite(_ sender: Any) {
-        let ref = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/favorites/\(self.uid!)")
+        let ref = Database.database().reference().child("/users/\(Auth.auth().currentUser!.uid)/favorites/\(uid!)")
         if isFavorite {
-            favoriteBtn.setImage(RecipeViewController.emptyFaveBtn, for: .normal)
             ref.removeValue()
         } else {
-            favoriteBtn.setImage(RecipeViewController.filledFaveBtn, for: .normal)
             ref.setValue(true)
         }
-        self.isFavorite = !isFavorite
+
+
+    }
+    
+    func setFavoriteBtnImg(_ active: Bool) {
+        let image = (active ? RecipeViewController.filledFaveBtn : RecipeViewController.emptyFaveBtn)
+        favoriteBtn.setImage(image, for: .normal)
     }
     /*
     // MARK: - Navigation
