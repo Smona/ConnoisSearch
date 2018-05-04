@@ -52,7 +52,13 @@ class FavoritesTableViewController: UITableViewController {
         let item = favorites[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as? recipeItemTableViewCell
         cell?.recipeTitle.text = item.recipeTitle
-        cell?.prepTime.text = String(describing: item.prepTime ?? 0) + "m"
+        
+        if let prepTime = item.prepTime {
+            cell?.prepTime.text = String(describing: prepTime) + "m"
+        } else {
+            cell?.prepTime.text = ""
+        }
+        
         let url = URL(string: item.imageURL!)
         let data = try? Data(contentsOf: url!)
         cell?.recipeImage.image = UIImage(data: data!)
@@ -74,20 +80,13 @@ class FavoritesTableViewController: UITableViewController {
                 print("Error: Missing id in Recipe response")
                 return
             }
-            guard let imgUrl = data["image_url"] as? String else {
-                print("Error: Missing recipe image url")
-                return
-            }
             guard let title = data["recipe_title"] as? String else {
                 print("Error: Missing recipe title")
                 return
             }
-            guard let time = data["cook_time"] as? Int else {
-                print("Error: Mising recipe prep time")
-                return
-            }
             
-            self.favorites.append(RecipeItem(recipeID: id, imageURL: imgUrl, recipeTitle: title, prepTime: time))
+            let newItem = RecipeItem(recipeID: id, recipeTitle: title, imageURL: data["image_url"] as? String, prepTime: data["cook_time"] as? Int)
+            self.favorites.append(newItem)
             let indexPath = IndexPath(row: self.favorites.count - 1, section: 0)
             self.favoritesTableView.beginUpdates()
             self.favoritesTableView.insertRows(at: [indexPath], with: .automatic)

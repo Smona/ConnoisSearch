@@ -10,12 +10,12 @@ import Foundation
 
 class RecipeItem {
     
-    let recipeID:Int?
+    let recipeID:Int
     var imageURL:String?
-    let recipeTitle:String?
+    let recipeTitle:String
     let prepTime:Int?
     
-    init(recipeID:Int, imageURL:String, recipeTitle:String, prepTime:Int) {
+    init(recipeID:Int, recipeTitle:String, imageURL:String?, prepTime:Int?) {
         self.recipeID = recipeID
         self.imageURL = imageURL
         self.recipeTitle = recipeTitle
@@ -23,6 +23,6 @@ class RecipeItem {
     }
     
     class func create(_recipeID:Int, _imageURL:String, _recipeTitle:String, _prepTime:Int) -> RecipeItem {
-        return RecipeItem(recipeID:_recipeID, imageURL:_imageURL, recipeTitle:_recipeTitle, prepTime:_prepTime)
+        return RecipeItem(recipeID:_recipeID, recipeTitle:_recipeTitle, imageURL:_imageURL, prepTime:_prepTime)
     }
 }

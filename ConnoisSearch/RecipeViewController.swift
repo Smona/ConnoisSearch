@@ -57,9 +57,13 @@ class RecipeViewController: UIViewController {
         titleLabel.text =  recipeDict["recipe_title"] as? String
         if let cookTime = recipeDict["cook_time"] as? Int {
             timeLabel.text = String(cookTime) + " min"
+        } else {
+            timeLabel.text = " "
         }
         if let servings = recipeDict["servings"] as? Int {
             servingsLabel.text = String(servings) + (servings == 1 ? " serving" : " servings")
+        } else {
+            servingsLabel.text = " "
         }
         instructionsLabel.text = (recipeDict["instructions"] as? String)!
         instructionsLabel.sizeToFit()
